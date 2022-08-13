@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-
+import Swal from 'sweetalert2';
 @Injectable({
   providedIn: 'root'
 })
@@ -57,6 +57,9 @@ export class UserService {
    if(error.error instanceof ErrorEvent) {
      errorMessage = error.error.message;
    } else {
+    if(error.status==422){
+      Swal.fire('ERROR!','Ya existe un registro con ese usuario','error');
+    }
      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
    }
    return throwError(errorMessage);
