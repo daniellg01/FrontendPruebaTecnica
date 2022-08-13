@@ -1,0 +1,60 @@
+<div class="container-fluid">
+  <div class="card m-5 p-3">
+    <a (click)="logOut()" class="btn btn-dark btn-lg">LogOut</a><br>
+    <a routerLink="/user/create" class="btn btn-green btn-lg">Crear nuevo usuario</a>
+      <div class="card-body table-responsive" >
+        <table datatable [dtTrigger]="dtTrigger" [dtOptions]="dtOptions" class="table table-responsive table-striped table-bordered row-border hover">
+          <thead>
+          <tr>
+            <th>ID</th>
+            <th>USUARIO</th>
+            <th>NOMBRES</th>
+            <th>TIPO DE IDENTIFICACION</th>
+            <th># DE IDENTIFICACION</th>
+            <th>FECHA DE NACIMIENTO</th>
+            <th>CONTRASEÑA</th>
+            <th>VER</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+          </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let user of users">
+              <td>{{ user.id }}</td>
+              <td>{{ user.usuario }}</td>
+              <td>{{ user.nombres }}</td>
+              <td>{{ user.tipoDeIdentificacion }}</td>
+              <td>{{ user.numDeIdentificacion }}</td>
+              <td>{{ user.fechaDeNacimiento |  date:'dd/MM/yy'}}</td>
+              <td>{{ user.contrasenna }}</td>
+              <td>
+                <a
+                  href="#"
+                  [routerLink]="['/user/', 'view', user.id]"
+                  class="btn btn-warnin btn-lg"
+                  >Ver</a
+                ></td>
+              <td>
+                <a
+                  href="#"
+                  [routerLink]="['/user/', 'edit', user.id]"
+                  class="btn btn-primar btn-lg"
+                  >Editar</a
+                ></td>
+
+                <td>
+                <button
+                  type="button"
+                  (click)="deletePerson(user.id)"
+                  class="btn btn-danger btn-lg"
+                >
+                  Eliminar
+                </button>
+              </td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+  </div>
+</div>

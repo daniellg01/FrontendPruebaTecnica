@@ -1,0 +1,38 @@
+.container-fluid {
+  padding-top: 100px;
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+min-height:100vh;
+  font-family: "Montserrat", sans-serif;
+}
+h2 {
+  font-weight: 500;
+  color: #fff;
+  opacity: 0.7;
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 60px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.btn-green{
+  background: linear-gradient(45deg, #FC466B, #3F5EFB);
+  color:white;
+}
+table,.card{
+  background: rgba(255, 255, 255, 0.459);
+}
+.btn-primar{
+  background-color: #3F5EFB!important;
+  color:white;
+  border:1px solid white;
+}
+.btn-danger{
+  background-color: #FC466B!important;
+  color:white;
+  border:1px solid white;
+}
+.btn-warnin{
+  background-color: #8754c4!important;
+  color:white;
+  border:1px solid white;
+}
+

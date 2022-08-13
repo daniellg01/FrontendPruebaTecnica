@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="d-flex justify-content-between">
+      <h2>Crear Usuario</h2>
+      <a href="#" routerLink="/user/index" class="btn btn-primaryt"><h2>Volver Atrás</h2></a>
+    </div>
+    <form class="mx-auto form" [formGroup]="form" (ngSubmit)="submit()">
+    <h2>Bienvenido</h2>
+    <label for="title">Usuario:</label><br>
+    <input formControlName="usuario" id="usuario" type="text" class="" /><br>
+
+    <label for="title">Nombres:</label><br>
+    <input formControlName="nombres" id="nombres" type="text" class="" /><br>
+    <label for="title">Apellidos:</label><br>
+    <input formControlName="apellidos" id="apellidos" type="text" class="" /><br>
+
+    <label for="title">Tipo De Identificacion:</label><br>
+    <input formControlName="tipoDeIdentificacion" id="tipoDeIdentificacion" type="text" class="" /><br>
+    <label for="title">Numero De Identificacion:</label><br>
+    <input formControlName="numDeIdentificacion" id="numDeIdentificacion" type="number" class="" /><br>
+    <label for="fechaDeNacimiento">Fecha de nacimiento:</label><br>
+    <input formControlName="fechaDeNacimiento" id="fechaDeNacimiento" type="date" placeholder="Fecha de nacimiento"
+      class=""  /><br>
+    <label for="title">Contraseña:</label><br>
+    <input formControlName="contrasenna" id="contrasenna" type="password" class="" /><br>
+    <button class="btn " type="submit" [disabled]="!form.valid">
+      Submit
+    </button>
+    </form>
+</div>
